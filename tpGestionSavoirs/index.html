@@ -5,14 +5,26 @@
     <title>TP Gestion Savoirs</title>
 </head>
 <body>
-Savoir : <input type="text">
-<br>
-Auteur : <input type="text">
-<br>
-Date : <input type="date">
-<br>
-<button>Ajouter</button>
 
+Savoir : <input type="text" id="focus">
+<br>
+Auteur : <input type="text" >
+<br>
+Date :  <input type="date" >
+<br>
+<button onclick="focusMethod()">Ajouter</button>
+
+
+
+<!--
+1) Faire le HTML ! Ne faites pas de <form>
+2) Initialiser la date à aujourd'hui + mettre le focus dans le champ savoir
+3) Ajout event sur bouton
+récupération des infos des inputs
+4) Vérifier que les champs sont remplis
+5)J'ajoute au DOM une div qui contient les informations (qui peut être dans un ul li)
+6) Si on clique sur un savoir, on peut l'effacer (e.currenttarget.remove)
+ -->
 <script src="savoir.js"></script>
 </body>
 </html>
