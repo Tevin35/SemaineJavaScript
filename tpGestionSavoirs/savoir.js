@@ -18,3 +18,28 @@ if (day < 10) day = "0" + day;
 var today = year + "-" + month + "-" + day;
 document.getElementById('theDate').value = today;
 
+//
+
+/*function getSavoir() {
+    const savoir = document.querySelector('input#savoir').value;
+    console.log(savoir);
+}
+
+function getAuteur() {
+    const auteur = document.querySelector('input#auteur').value;
+    console.log(auteur);
+}
+
+function getCal() {
+    const cal = document.querySelector('input#theDate').value;
+    console.log(cal);
+}*/
+
+const getValueInput = () =>{
+    let valueSavoir = document.getElementById("savoir").value;
+    document.getElementById("valueSavoir").innerHTML = valueSavoir;
+    let valueAuteur = document.getElementById("auteur").value;
+    document.getElementById("valueAuteur").innerHTML = valueAuteur;
+    let valueDate = document.getElementById("theDate").value;
+    document.getElementById("valueDate").innerHTML = valueDate;
+}

@@ -6,21 +6,25 @@
 </head>
 <body>
 
-Savoir : <input type="text" id="focus">
+Savoir : <input type="text" id="savoir" onblur="getSavoir()" required>
 <br>
-Auteur : <input type="text" >
+Auteur : <input type="text" id="auteur" onblur="getAuteur()" required>
 <br>
-Date : <input type="date" id="theDate">
+Date : <input type="date" id="theDate" onblur="getCal()" required>
 <br>
-<button onclick="focusMethod()">Ajouter</button>
 
+<button onclick="getValueInput()">Ajouter</button>
 
+<div>
+    <h1 id="valueSavoir"></h1>
+    <h2 id="valueAuteur"></h2>
+    <p id="valueDate"></p>
+</div>
 
 <!--
 1) Faire le HTML ! Ne faites pas de <form>
 2) Initialiser la date à aujourd'hui + mettre le focus dans le champ savoir
-3) Ajout event sur bouton
-récupération des infos des inputs
+3) Ajout event sur bouton et récupération des infos des inputs
 4) Vérifier que les champs sont remplis
 5)J'ajoute au DOM une div qui contient les informations (qui peut être dans un ul li)
 6) Si on clique sur un savoir, on peut l'effacer (e.currenttarget.remove)
