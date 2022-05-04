@@ -21,3 +21,10 @@ let sport2 = {
 }
 
 sport2.afficher()
+
+let sports = [sport, sport2, {metier: "Boucher"}]
+
+console.log(sports)
+console.log(sports[2])
+console.log(sports[1]['nom'])
+console.log(sports[1].nom)
