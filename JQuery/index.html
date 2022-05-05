@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="hideAll()">Tout le monde se cache</button>
+<button onclick="showAll()">Tout le monde se décache</button>
+<button onclick="hideCaptain()">Le capitaine se cache</button>
+<button onclick="hideSailors()">Les marins se cachent</button>
+<button onclick="hideBoats()">Les bateaux se cachent</button>
+
+<div id="captain">C'est moi le capitaine</div>
+<div class="equipage">
+    // div[class=marin]*4
+    <div class="marin">M1</div>
+    <div class="marin">M2</div>
+    <div class="marin">M3</div>
+    <div class="marin">M4</div>
+</div>
+
+<div>
+    <div class="bateau">Bateau 1</div>
+    <div class="bateau">Bateau 2</div>
+</div>
+
+</body>
+<script src="jquery.js"></script>
+
+</html>

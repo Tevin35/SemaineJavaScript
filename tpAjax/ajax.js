@@ -1,12 +1,11 @@
 function getVille() {
 
-    // code = la valeur mis dans l'input getDepartement
-    let code = document.getElementById("getDepartement").value;
+    // idDep = la valeur mis dans l'input getDepartement
+    let idDep = document.getElementById("getDepartement").value;
 
-    console.log(code)
 
     //je fetch l'api avec le lien avec le code récupéré juste au dessus
-    fetch("https://geo.api.gouv.fr/departements/" + code + "/communes", {method: "GET"})
+    fetch("https://geo.api.gouv.fr/departements/" + idDep + "/communes", {method: "GET"})
         .then(function (response) {
 
             console.log(response)
@@ -14,13 +13,18 @@ function getVille() {
                 return response.json()
             }
         }).then(function (data) {
+        document.getElementById("selectCom").innerHTML="<option selected disabled>--Choisir commune--</option>";
 
-        //pour chaque commune que je trouve imprimer les infos avec nom, code postal, population etc........................
-        data.forEach(function (commune, index) {
-            let p = document.createElement("p")
-            p.innerText = "Nom : " + commune.nom + ", code postal : " + commune.code + ", population : " + commune.population
+        data.sort(function (a,b)){
+            return a.nomlocaleCompare(b.nom)
+        }
 
-            document.getElementById("content").appendChild(p)
+        data.forEach(function (city) {
+            let option = document.createElement("option")
+            option.innerText = city.nom
+            option.setAttribute("value", city.code)
+
+            document.getElementById("selectCom").appendChild(option)
         })
     })
 
