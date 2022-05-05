@@ -9,16 +9,20 @@ https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/date */
 
 //c/c de https://www.demo2s.com/javascript/javascript-date-set-input-type-date-s-default-value-to-today.html //
 
-var date = new Date();
+/*var date = new Date();
 var day = date.getDate();
 var month = date.getMonth() + 1;
 var year = date.getFullYear();
 if (month < 10) month = "0" + month;
 if (day < 10) day = "0" + day;
 var today = year + "-" + month + "-" + day;
-document.getElementById('theDate').value = today;
+document.getElementById('theDate').value = today;*/
 
-//
+//obtenir la date d'aujourd'hui !
+document.getElementById('theDate').valueAsDate = new Date();
+
+//mettre le focus dans le champ savoir
+document.getElementById("knowledge").focus()
 
 /*function getSavoir() {
     const savoir = document.querySelector('input#savoir').value;
@@ -35,11 +39,13 @@ function getCal() {
     console.log(cal);
 }*/
 
+//Documentation : https://www.delftstack.com/howto/javascript/javascript-get-input-value/
+
 const getValueInput = () =>{
     let valueSavoir = document.getElementById("savoir").value;
     document.getElementById("valueSavoir").innerHTML = valueSavoir;
     let valueAuteur = document.getElementById("auteur").value;
-    document.getElementById("valueAuteur").innerHTML = valueAuteur;
+    document.getElementById("valueAuteur").innerHTML = "Par " + valueAuteur;
     let valueDate = document.getElementById("theDate").value;
-    document.getElementById("valueDate").innerHTML = valueDate;
+    document.getElementById("valueDate").innerHTML = " le " + valueDate;
 }
